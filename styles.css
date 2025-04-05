@@ -1,0 +1,192 @@
+:root {
+    --color-correct: #6aaa64;
+    --color-present: #c9b458;
+    --color-absent: #787c7e;
+    --color-background: #ffffff;
+    --color-keyboard: #d3d6da;
+    --font-family: 'Clear Sans', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    background-color: var(--color-background);
+}
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: 1px solid #d3d6da;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.board-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.tile {
+    width: 62px;
+    height: 62px;
+    border: 2px solid #d3d6da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.tile[data-state="correct"] {
+    background-color: var(--color-correct);
+    border-color: var(--color-correct);
+    color: white;
+}
+
+.tile[data-state="present"] {
+    background-color: var(--color-present);
+    border-color: var(--color-present);
+    color: white;
+}
+
+.tile[data-state="absent"] {
+    background-color: var(--color-absent);
+    border-color: var(--color-absent);
+    color: white;
+}
+
+.tile.pop {
+    animation: PopIn 0.1s;
+}
+
+@keyframes PopIn {
+    0% { transform: scale(0.8); }
+    40% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#keyboard-container {
+    padding: 10px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin: 0 6px 0 0;
+    height: 58px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--color-keyboard);
+    color: black;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0,0,0,.3);
+}
+
+.keyboard-row button:last-of-type {
+    margin: 0;
+}
+
+.keyboard-row .wide-button {
+    flex: 1.5;
+    font-size: 12px;
+}
+
+.spacer-half {
+    flex: 0.5;
+}
+
+button[data-state="correct"] {
+    background-color: var(--color-correct);
+    color: white;
+}
+
+button[data-state="present"] {
+    background-color: var(--color-present);
+    color: white;
+}
+
+button[data-state="absent"] {
+    background-color: var(--color-absent);
+    color: white;
+}
+
+#toast {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+@media (max-width: 500px) {
+    .tile {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+    }
+    
+    .keyboard-row button {
+        height: 52px;
+    }
+} 
