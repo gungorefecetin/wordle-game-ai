@@ -32,6 +32,7 @@ header {
     border-bottom: 1px solid #d3d6da;
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 h1 {
@@ -189,4 +190,52 @@ button[data-state="absent"] {
     .keyboard-row button {
         height: 52px;
     }
+}
+
+.mode-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 2rem;
+}
+
+.mode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mode-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-keyboard);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 200px;
+    text-transform: uppercase;
+}
+
+.mode-button:hover {
+    background-color: #c1c4c7;
+}
+
+.back-button {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.back-button:hover {
+    color: #000;
 } 

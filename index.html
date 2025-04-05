@@ -8,9 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Clear+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="game-container">
+    <div id="mode-selection" class="mode-selection">
+        <h1>Wordle</h1>
+        <div class="mode-buttons">
+            <button id="play-self" class="mode-button">Play Yourself</button>
+            <button id="watch-ai" class="mode-button">Watch AI Play</button>
+        </div>
+    </div>
+
+    <div class="game-container" style="display: none;">
         <header>
             <h1>Wordle</h1>
+            <button id="back-to-menu" class="back-button">← Menu</button>
         </header>
 
         <div id="board-container">
