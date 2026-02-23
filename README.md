@@ -2,6 +2,10 @@
 
 A feature-rich clone of the popular word-guessing game Wordle, built with vanilla JavaScript. This implementation includes both a player mode and an AI mode, offering an engaging word puzzle experience.
 
+<img width="437" height="359" alt="Screenshot 2026-02-23 at 10 13 32" src="https://github.com/user-attachments/assets/d49ed959-598b-4a77-a9c2-cbb6e12e8ac6" />
+<img width="2048" height="1330" alt="Untitled design (3)" src="https://github.com/user-attachments/assets/9672d25e-ac8c-41bc-bd9f-215f0cdfba5a" />
+<img width="2048" height="1330" alt="Untitled design (4)" src="https://github.com/user-attachments/assets/67e8d265-34ed-4906-a926-a32fa6dca2f7" />
+
 ## 🎮 Features
 
 - **Two Game Modes:**
